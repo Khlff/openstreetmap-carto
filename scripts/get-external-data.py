@@ -232,7 +232,7 @@ def main():
                     headers = {}
 
                 logging.info("  Fetching {}".format(source["url"]))
-                download = s.get(source["url"], headers=headers)
+                download = s.get(source["url"], headers=headers, verify=False)
                 download.raise_for_status()
 
                 if download.status_code == requests.codes.ok:
